@@ -1,7 +1,7 @@
 # implement
 Concepts are known, implementation is mine
 
-
+- add brief points, use cases, big O time and space
 ## Data Structures
   - Vector
   - Stack
