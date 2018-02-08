@@ -35,7 +35,7 @@ public:
             cur = cur->children[index];
         }
         
-        cur->isEndOfWord = true;
+        cur->wordEnd = true;
     }
     
     /** @brief Returns if the word is in the trie. */
@@ -43,7 +43,7 @@ public:
     {
         TrieNode* cur = searchPrefix(word);
         
-        return (cur != NULL && cur->isEndOfWord);
+        return (cur != NULL && cur->wordEnd);
     }
     
     /** @brief Returns if there is any word in the trie that starts with the given prefix. */
@@ -57,11 +57,11 @@ private:
     /** @brief trie node structure */
     typedef struct TrieNode
     {
-         struct TrieNode *children[ALPHABET_SIZE];
+        // link to all alphabet letters
+        struct TrieNode *children[ALPHABET_SIZE];
 
-         // isEndOfWord is true if the node
-         // represents end of a word
-         bool isEndOfWord;
+        // is this word end?
+        bool wordEnd;
     };
     
     TrieNode* root;
@@ -70,7 +70,7 @@ private:
     TrieNode* getTrieNode(void)
     {
         TrieNode* retNode = new TrieNode;
-        retNode->isEndOfWord = false;
+        retNode->wordEnd = false;
         
         for (int i = 0; i < ALPHABET_SIZE; i++)
         {
