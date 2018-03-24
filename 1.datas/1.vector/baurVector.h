@@ -48,6 +48,32 @@ bool bvector_empty(BAUR_VECTOR* vector);
 void bvector_push_back(BAUR_VECTOR* vector, int elem);
 
 /*
+ * @brief returns element at specified position
+ */
+int bvector_at(BAUR_VECTOR* vector, int pos);
+
+/*
+ * @brief Inserts element at specified position in a given vector
+ */
+void bvector_insert(BAUR_VECTOR* vector, int pos, int elem);
+
+/*
+ * @brief Delets element at specified position in a given vector
+ */
+void bvector_delete(BAUR_VECTOR* vector, int pos);
+
+/*
+* @brief Finds first occurence of the elemnt
+*/
+int bvector_find(BAUR_VECTOR* vector, int elem);
+
+/*
+* @brief Deletes the last element from the vector
+*/
+void bvector_pop_back(BAUR_VECTOR* vector);
+
+
+/*
 * @brief Prints all elements in the vector
 */
 void bvector_print(BAUR_VECTOR* vector);
