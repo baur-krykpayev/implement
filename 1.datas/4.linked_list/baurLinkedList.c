@@ -174,12 +174,36 @@ void bll_erase(BLL_NODE** root, int index)
 /*
 * @brief Reverse linked list
 */
-void bll_reverse(BLL_NODE** root);
+void bll_reverse(BLL_NODE** root) 
+{
+	BLL_NODE* cur = *root;
+	BLL_NODE* prev = NULL;
+
+	while (cur) 
+	{
+		BLL_NODE* next = cur->next;
+		cur->next = prev;
+		prev = cur;
+		cur = next;
+	}
+
+	*root = prev;
+}
 
 /*
 * @brief Destroys existing linked list
 */
-void bll_destroy(BLL_NODE** root);
+void bll_destroy(BLL_NODE* root) 
+{
+	BLL_NODE* cur = root;
+	
+	while (cur) 
+	{
+		BLL_NODE* temp = cur->next;
+		free(cur);
+		cur = temp;
+	}
+}
 
 
 /*****************private functions ****************/

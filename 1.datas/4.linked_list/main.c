@@ -37,7 +37,11 @@ int main(void)
 	bll_print_list(root1);
 	printf("The size of the LL: %d\n", bll_size(root1));
 
+	bll_reverse(&root1);
+	bll_print_list(root1);
+	printf("The size of the LL: %d\n", bll_size(root1));
 
+	bll_destroy(root1);
 
 	return EXIT_SUCCESS;
 }
